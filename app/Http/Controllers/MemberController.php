@@ -45,9 +45,11 @@ class MemberController extends Controller
 
     public function getAll()
     {
-        $data['count'] = Member::count();
-        $data['member'] = Member::get();
-        return response()->json(['data' => $data]);
+        // $data['count'] = Member::count();
+        // $data['member'] = Member::get();
+        // return response()->json(['member' => $data]);
+        $data = Member::get();        
+        return response()->json($data);
     }
 
     public function getById($id_member)
